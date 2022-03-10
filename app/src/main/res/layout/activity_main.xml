@@ -1,23 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
+        <Button
+            android:id="@+id/btnUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="15dp"
-            android:textSize="20dp" />
+            android:text="UP" />
 
-        <kr.hs.numberpicker.NumberPickerRecyclerView
-            android:id="@+id/numberPickerRecyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <kr.hs.numberpicker.NumberPickerRecyclerView
+                android:id="@+id/picker1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                app:color="@color/black"
+                app:count="10"
+                app:defaultValue="0"
+                app:fontSize="15dp"
+                app:format="@string/NumberPickerFormat"
+                app:interval="1"
+                app:snapColor="@color/design_default_color_error"
+                app:start="0" />
+
+            <kr.hs.numberpicker.NumberPickerRecyclerView
+                android:id="@+id/picker2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                app:color="@color/black"
+                app:count="5"
+                app:defaultValue="0"
+                app:fontSize="15dp"
+                app:format="@string/NumberPickerFormat"
+                app:interval="3"
+                app:snapColor="@color/design_default_color_error"
+                app:start="0" />
+
+            <kr.hs.numberpicker.NumberPickerRecyclerView
+                android:id="@+id/picker3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                app:color="@color/black"
+                app:count="10"
+                app:defaultValue="0"
+                app:fontSize="15dp"
+                app:format="@string/NumberPickerFormat"
+                app:interval="10"
+                app:snapColor="@color/design_default_color_error"
+                app:start="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Down" />
     </LinearLayout>
 </layout>

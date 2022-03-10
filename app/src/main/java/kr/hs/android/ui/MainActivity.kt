@@ -18,27 +18,28 @@ class MainActivity : AppCompatActivity(), NumberPickerRecyclerView.OnSnapNumberL
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val numberPickerRecyclerView = binding.numberPickerRecyclerView
+        binding.picker1.setOnSnapListener(this)
+        binding.picker2.setOnSnapListener(this)
+        binding.picker3.setOnSnapListener(this)
 
-        // 숫자 색상
-        numberPickerRecyclerView.defaultTextColor =
-            ContextCompat.getColor(this, android.R.color.holo_red_dark)
-        // 하이라이팅 된 색상
-        numberPickerRecyclerView.snapTextColor =
-            ContextCompat.getColor(this, android.R.color.holo_red_light)
+        binding.btnUp.setOnClickListener {
+            binding.picker1.up()
+            binding.picker2.up()
+            binding.picker3.up()
+        }
 
-        // 숫자 자릿수
-        numberPickerRecyclerView.numberFormat = "%02d"
-        // 숫자 DP 사이즈
-        numberPickerRecyclerView.numberFontSizeDP = 40F
-        // 선택된 값을 알기위한 리스너
-        numberPickerRecyclerView.onSnapListener = this
-
-        numberPickerRecyclerView.setup(1, 60, 1)
+        binding.btnDown.setOnClickListener {
+            binding.picker1.down()
+            binding.picker2.down()
+            binding.picker3.down()
+        }
     }
 
     override fun onSnap(recyclerView: RecyclerView, number: Int) {
-        val resultView: TextView = binding.textView
-        resultView.text = "선택된 값 : $number"
+        when (recyclerView) {
+            binding.picker1 -> binding.textView1.text = "선택된 값 : $number"
+            binding.picker2 -> binding.textView2.text = "선택된 값 : $number"
+            binding.picker3 -> binding.textView3.text = "선택된 값 : $number"
+        }
     }
 }

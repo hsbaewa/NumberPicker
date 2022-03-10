@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NumberPicker">
+        <attr name="color" format="color" />
+        <attr name="snapColor" format="color" />
+        <attr name="format" format="string" />
+        <attr name="fontSize" format="dimension" />
+        <attr name="start" format="integer" />
+        <attr name="count" format="integer" />
+        <attr name="defaultValue" format="integer" />
+        <attr name="interval" format="integer" />
+
+    </declare-styleable>
+</resources>
